@@ -1,4 +1,6 @@
-[![travis](https://travis-ci.org/bionitio-team/bionitio-r.svg?branch=master)](https://travis-ci.org/bionitio-team/bionitio-r)
+# bionitio-r
+
+I imported this repo from [bionitio](https://github.com/bionitio-team/bionitio-r) and modified it for [teaching](https://github.com/kelly-sovacool/BIOINF576-ci). Below is the original README from the bionitio team.
 
 # Overview 
 
