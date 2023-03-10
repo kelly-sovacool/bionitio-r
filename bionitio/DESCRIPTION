@@ -12,6 +12,9 @@ Imports:
     seqinr,
     logging
 Suggests:
-    testthat,
-    lintr
-RoxygenNote: 5.0.1
+    devtools,
+    lintr,
+    styler,
+    testthat
+RoxygenNote: 7.2.1
+Encoding: UTF-8
