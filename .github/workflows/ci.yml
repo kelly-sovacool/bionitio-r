@@ -34,11 +34,3 @@ jobs:
         with:
           args: 'c("--no-manual", "--as-cran")'
           working-directory: bionitio
-      
-      - name: Print
-        run: echo "Hello, world!"
-      
-      - name: R print
-        run: print("Hello, world!")
-        shell: Rscript {0}
-
