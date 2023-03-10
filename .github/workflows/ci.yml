@@ -27,7 +27,18 @@ jobs:
         with:
           extra-packages: any::rcmdcheck
           needs: check
+          working-directory: bionitio
 
       - name: Check
-        run: rcmdcheck::rcmdcheck(args = "--no-manual", error_on = "error")
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--as-cran")'
+          working-directory: bionitio
+      
+      - name: Print
+        run: echo "Hello, world!"
+      
+      - name: R print
+        run: print("Hello, world!")
         shell: Rscript {0}
+
