@@ -33,4 +33,3 @@ my_fasta_files <- c(
     system.file("extdata", "two_sequence.fasta", package = "bionitio"))
 run_bionitio(my_fasta_files)
 }
-

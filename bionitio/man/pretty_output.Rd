@@ -21,4 +21,3 @@ sequences <- load_fasta_file(filename = my_fasta_file)
 stats <- get_seq_stats(sequences, filename = my_fasta_file)
 pretty_output(stats)
 }
-

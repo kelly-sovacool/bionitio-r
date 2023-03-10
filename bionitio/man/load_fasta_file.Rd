@@ -15,7 +15,7 @@ exit status of 3. This will only occur if the R session is
 non-interactive.}
 }
 \value{
-A character vector of containing sequenecs as characters. Each
+A character vector containing sequences as characters. Each
     element in the vector is a sequence in the FASTA file.
 }
 \description{
@@ -26,4 +26,3 @@ Wrapper for seqinr \code{read.fasta()} to load in a FASTA file
 my_fasta_file <- system.file("extdata", "two_sequence.fasta", package = "bionitio")
 load_fasta_file(filename = my_fasta_file)
 }
-

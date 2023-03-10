@@ -29,4 +29,3 @@ my_fasta_file <- system.file("extdata", "two_sequence.fasta", package = "bioniti
 sequences <- load_fasta_file(filename = my_fasta_file)
 get_seq_stats(sequences, filename = my_fasta_file)
 }
-
