@@ -1,5 +1,7 @@
 # bionitio-r
 
+[![CI](https://github.com/kelly-sovacool/bionitio-r/actions/workflows/ci.yml/badge.svg)](https://github.com/kelly-sovacool/bionitio-r/actions/workflows/ci.yml)
+
 I imported this repo from [bionitio](https://github.com/bionitio-team/bionitio-r) and modified it for [teaching](https://github.com/kelly-sovacool/BIOINF576-ci). Below is the original README from the bionitio team.
 
 # Overview 
