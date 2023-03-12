@@ -1,0 +1,4 @@
+get_seq_stats           Calculate sequence statistics
+load_fasta_file         Load a FASTA file
+pretty_output           Prettify output
+run_bionitio            Bionitio

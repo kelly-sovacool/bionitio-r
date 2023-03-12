@@ -1,7 +1,7 @@
 #!/usr/bin/env Rscript
 
-# Module      : bionitio.R 
-# Description : Wrapper for the bionitio package 
+# Module      : bionitio.R
+# Description : Wrapper for the bionitio package
 # Copyright   : (c) BIONITIO_AUTHOR, BIONITIO_DATE
 # License     : BIONITIO_LICENSE
 # Maintainer  : BIONITIO_EMAIL
@@ -24,35 +24,43 @@ DEFAULT_LOG <- ""
 
 option_list <- list(
   make_option("--minlen",
-              help = paste("Minimum length sequence to include in stats",
-                           "[default: %default]"),
-              type = "integer",
-              default = DEFAULT_MIN_LEN),
+    help = paste(
+      "Minimum length sequence to include in stats",
+      "[default: %default]"
+    ),
+    type = "integer",
+    default = DEFAULT_MIN_LEN
+  ),
   make_option("--log",
-              help = "Record program process in specified log filename",
-              type = "character",
-              default = DEFAULT_LOG),
+    help = "Record program process in specified log filename",
+    type = "character",
+    default = DEFAULT_LOG
+  ),
   make_option("--version",
-              help = "Print version and exit",
-              action = "store_true",
-              default = FALSE)
+    help = "Print version and exit",
+    action = "store_true",
+    default = FALSE
+  )
 )
 
-parser <- OptionParser(                                             # nolint
+parser <- OptionParser( # nolint
   usage = paste("%prog [OPTIONS] [FASTA_FILE [FASTA_FILE ...]]",
-                "Print FASTA stats.\n",
-                "Positional arguments:",
-                "\tFASTA_FILE: Input FASTA files. Use - to read from stdin.",
-                sep = "\n"),
+    "Print FASTA stats.\n",
+    "Positional arguments:",
+    "\tFASTA_FILE: Input FASTA files. Use - to read from stdin.",
+    sep = "\n"
+  ),
   option_list = option_list
 )
 
 # Parse command line arguments
 INVALID_MESSAGE <- "Invalid command line arguments. Use --help for help."
-tryCatch({
+tryCatch(
+  {
     suppressWarnings(
       arguments <- parse_args(parser, positional_arguments = TRUE)
-    )},
+    )
+  },
   error = function(e) {
     message(INVALID_MESSAGE)
     quit(status = 2)

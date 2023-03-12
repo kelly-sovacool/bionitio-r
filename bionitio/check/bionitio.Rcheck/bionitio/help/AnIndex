@@ -1,0 +1,4 @@
+get_seq_stats	get_seq_stats
+load_fasta_file	load_fasta_file
+pretty_output	pretty_output
+run_bionitio	run_bionitio

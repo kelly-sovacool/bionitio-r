@@ -1,0 +1,185 @@
+
+R version 4.2.2 (2022-10-31) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "bionitio"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> base::assign(".ExTimings", "bionitio-Ex.timings", pos = 'CheckExEnv')
+> base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+> base::assign(".format_ptime",
++ function(x) {
++   if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
++   if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
++   options(OutDec = '.')
++   format(x[1L:3L], digits = 7L)
++ },
++ pos = 'CheckExEnv')
+> 
+> ### * </HEADER>
+> library('bionitio')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("get_seq_stats")
+> ### * get_seq_stats
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: get_seq_stats
+> ### Title: Calculate sequence statistics
+> ### Aliases: get_seq_stats
+> 
+> ### ** Examples
+> 
+> my_fasta_file <- system.file("extdata", "two_sequence.fasta", package = "bionitio")
+> sequences <- load_fasta_file(filename = my_fasta_file)
+> get_seq_stats(sequences, filename = my_fasta_file)
+$filename
+[1] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta"
+
+$numseq
+[1] 2
+
+$total
+[1] 357
+
+$min
+[1] 120
+
+$avg
+[1] 178
+
+$max
+[1] 237
+
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("get_seq_stats", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("load_fasta_file")
+> ### * load_fasta_file
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: load_fasta_file
+> ### Title: Load a FASTA file
+> ### Aliases: load_fasta_file
+> 
+> ### ** Examples
+> 
+> my_fasta_file <- system.file("extdata", "two_sequence.fasta", package = "bionitio")
+> load_fasta_file(filename = my_fasta_file)
+[1] "MTEITAAMVKELRESTGAGMMDCKNALSETNGDFDKAVQLLREKGLGKAAKKADRLAAEGLVSVKVSDDFTIAAMRPSYLSYEDLDMTFVENEYKALVAELEKENEERRRLKDPNKPEHKIPQFASRKQLSDAILKEAEEKIKEELKAQGKPEKIWDNIIPGKMNSFIADNSQLDSKLTLMGQFYVMDDKKTVEQVIAEKEKEFGGKIKIVEFICFEVGEGLEKKTEDFAAEVAAQL"
+[2] "SATVSEINSETDFVAKNDQFIALTKDTTAHIQSNSLQSVEELHSSTINGVKFEEYLKSQIATIGENLVVRRFATLKAGANGVVNGYIHTNGRVGVVIAAACDSAEVASKSRDLLRQICMH"                                                                                                                     
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("load_fasta_file", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("pretty_output")
+> ### * pretty_output
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: pretty_output
+> ### Title: Prettify output
+> ### Aliases: pretty_output
+> 
+> ### ** Examples
+> 
+> my_fasta_file <- system.file("extdata", "empty_file", package = "bionitio")
+> sequences <- load_fasta_file(filename = my_fasta_file)
+2023-03-12 03:16:24 WARNING::/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file  has no lines starting with a > character.
+> stats <- get_seq_stats(sequences, filename = my_fasta_file)
+> pretty_output(stats)
+$filename
+[1] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file"
+
+$numseq
+[1] 0
+
+$total
+[1] 0
+
+$min
+[1] "-"
+
+$avg
+[1] "-"
+
+$max
+[1] "-"
+
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("pretty_output", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> cleanEx()
+> nameEx("run_bionitio")
+> ### * run_bionitio
+> 
+> flush(stderr()); flush(stdout())
+> 
+> base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+> ### Name: run_bionitio
+> ### Title: Bionitio
+> ### Aliases: run_bionitio
+> 
+> ### ** Examples
+> 
+> my_fasta_files <- c(
++     system.file("extdata", "one_sequence.fasta", package = "bionitio"),
++     system.file("extdata", "two_sequence.fasta", package = "bionitio"))
+> run_bionitio(my_fasta_files)
+2023-03-12 03:16:24 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta
+2023-03-12 03:16:24 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta
+     filename                                                                                                    
+[1,] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta"
+[2,] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta"
+     numseq total min   avg   max  
+[1,] "1"    "237" "237" "237" "237"
+[2,] "2"    "357" "120" "178" "237"
+> 
+> 
+> 
+> base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+> base::cat("run_bionitio", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  0.405 0.008 0.413 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')
