@@ -12,8 +12,6 @@ on:
 
 env:    # configure environment variables for git commits
   actor: "41898282+github-actions[bot]"
-  token: ${{ secrets.GITHUB_TOKEN }}
-  repo: ${{ github.repository }}
 
 jobs:
   build:
@@ -28,10 +26,10 @@ jobs:
           use-public-rspm: true
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any::styler, any::lintr  # also install styler & lintr
+          extra-packages: any::rcmdcheck, any:styler, any:lintr  # also install styler & lintr
           needs: check
           working-directory: bionitio
-      - name: Configure git  # these use the environment variables we set above
+      - name: Configure git  # use the environment variable we set above
         run: |
           git config --local user.email "${actor}@users.noreply.github.com"
           git config --local user.name "$actor"
@@ -42,11 +40,11 @@ jobs:
           working-directory: bionitio
       - name: Style & lint
         run: |
-            styler::use_tidy_style("bionitio")  # change your package path here
-            lintr::lint_package("bionitio")     # and here
+            styler::style_dir(".")
+            lintr::lint_dir(".")
         shell: Rscript {0}
       - name: Commit and push changes
         run: |
-          git add bionitio/R/\*  # change the path to your R source files here
+          git add .
           git commit -m "🎨 Style code" || echo "No changes to commit"
           git push
