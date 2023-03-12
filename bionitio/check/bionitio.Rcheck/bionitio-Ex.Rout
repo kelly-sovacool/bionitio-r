@@ -112,7 +112,7 @@ $max
 > 
 > my_fasta_file <- system.file("extdata", "empty_file", package = "bionitio")
 > sequences <- load_fasta_file(filename = my_fasta_file)
-2023-03-12 03:16:24 WARNING::/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file  has no lines starting with a > character.
+2023-03-12 04:30:11 WARNING::/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file  has no lines starting with a > character.
 > stats <- get_seq_stats(sequences, filename = my_fasta_file)
 > pretty_output(stats)
 $filename
@@ -155,8 +155,8 @@ $max
 +     system.file("extdata", "one_sequence.fasta", package = "bionitio"),
 +     system.file("extdata", "two_sequence.fasta", package = "bionitio"))
 > run_bionitio(my_fasta_files)
-2023-03-12 03:16:24 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta
-2023-03-12 03:16:24 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta
+2023-03-12 04:30:11 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta
+2023-03-12 04:30:11 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta
      filename                                                                                                    
 [1,] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta"
 [2,] "/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta"
@@ -173,7 +173,7 @@ $max
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  0.405 0.008 0.413 0 0 
+Time elapsed:  0.549 0.013 0.562 0 0 
 > grDevices::dev.off()
 null device 
           1 

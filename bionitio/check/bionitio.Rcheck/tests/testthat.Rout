@@ -19,12 +19,12 @@ Type 'q()' to quit R.
 > library(bionitio)
 > 
 > test_check("bionitio")
-2023-03-12 03:16:25 WARNING::/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file  has no lines starting with a > character.
-2023-03-12 03:16:25 ERROR::incomplete final line found on 'single_greater_than.fasta'
-2023-03-12 03:16:25 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta
-2023-03-12 03:16:25 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta
+2023-03-12 04:30:12 WARNING::/home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/empty_file  has no lines starting with a > character.
+2023-03-12 04:30:12 ERROR::incomplete final line found on 'single_greater_than.fasta'
+2023-03-12 04:30:12 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/one_sequence.fasta
+2023-03-12 04:30:12 INFO::Processing file: /home/runner/work/bionitio-r/bionitio-r/bionitio/check/bionitio.Rcheck/bionitio/extdata/two_sequence.fasta
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 18 ]
 > 
 > proc.time()
    user  system elapsed 
-  0.792   0.086   0.766 
+  1.071   0.099   1.042 
