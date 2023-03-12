@@ -26,7 +26,7 @@ jobs:
           use-public-rspm: true
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
-          extra-packages: any::rcmdcheck, any:styler, any:lintr  # also install styler & lintr
+          extra-packages: any::rcmdcheck, any::styler, any::lintr  # also install styler & lintr
           needs: check
           working-directory: bionitio
       - name: Configure git  # use the environment variable we set above
