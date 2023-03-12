@@ -1,5 +1,0 @@
-name	user	system	elapsed
-get_seq_stats	0.185	0.001	0.185	
-load_fasta_file	0.001	0.000	0.001	
-pretty_output	0.033	0.004	0.037	
-run_bionitio	0.024	0.000	0.024	
