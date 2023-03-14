@@ -43,11 +43,11 @@ jobs:
             styler::style_dir(".")
             lintr::lint_dir(".")
         shell: Rscript {0}
-      - name: Test coverage
-        run: covr::codecov(path = "bionitio")
-        shell: Rscript {0}
       - name: Commit and push changes
         run: |
           git add .
           git commit -m "🎨 Style code" || echo "No changes to commit"
           git push
+      - name: Test coverage
+        run: covr::codecov(path = "bionitio")
+        shell: Rscript {0}
