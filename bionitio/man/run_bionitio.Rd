@@ -29,7 +29,8 @@ For the given fasta files, calculate statistics and return
 }
 \examples{
 my_fasta_files <- c(
-    system.file("extdata", "one_sequence.fasta", package = "bionitio"),
-    system.file("extdata", "two_sequence.fasta", package = "bionitio"))
+  system.file("extdata", "one_sequence.fasta", package = "bionitio"),
+  system.file("extdata", "two_sequence.fasta", package = "bionitio")
+)
 run_bionitio(my_fasta_files)
 }
